@@ -2,5 +2,9 @@
   "name": "@many-sources/styles",
   "version": "1.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:"
+  }
 }
