@@ -22,4 +22,10 @@ const passwordValidator = z
     `Password must not exceed ${MAXIMUM_PASSWORD_LENGTH} characters`
   );
 
-export { passwordValidator, emailValidator, nameValidator };
+const signUpValidator = z.object({
+  password: passwordValidator,
+  email: emailValidator,
+  name: nameValidator,
+});
+
+export { passwordValidator, signUpValidator, emailValidator, nameValidator };
