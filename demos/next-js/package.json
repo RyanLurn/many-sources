@@ -19,6 +19,7 @@
     "@libsql/client": "catalog:",
     "@many-sources/styles": "workspace:*",
     "@radix-ui/react-dropdown-menu": "catalog:",
+    "@radix-ui/react-label": "catalog:",
     "@radix-ui/react-slot": "catalog:",
     "@t3-oss/env-nextjs": "catalog:",
     "better-auth": "catalog:",
