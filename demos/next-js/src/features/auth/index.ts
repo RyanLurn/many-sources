@@ -8,6 +8,10 @@ import {
   sessionTable,
   userTable,
 } from "@/database/schema/auth";
+import {
+  MAXIMUM_PASSWORD_LENGTH,
+  MINIMUM_PASSWORD_LENGTH,
+} from "@/features/auth/constants";
 import { serverEnvironmentVariables } from "@/lib/env/server";
 import { database } from "@/database/connection";
 
@@ -21,6 +25,11 @@ const auth = betterAuth({
     },
     provider: "sqlite",
   }),
+  emailAndPassword: {
+    minPasswordLength: MINIMUM_PASSWORD_LENGTH,
+    maxPasswordLength: MAXIMUM_PASSWORD_LENGTH,
+    enabled: true,
+  },
   advanced: {
     database: {
       generateId: false,
@@ -28,9 +37,6 @@ const auth = betterAuth({
   },
   secret: serverEnvironmentVariables.BETTER_AUTH_SECRET,
   baseURL: serverEnvironmentVariables.BETTER_AUTH_URL,
-  emailAndPassword: {
-    enabled: true,
-  },
   plugins: [nextCookies()],
 });
 
