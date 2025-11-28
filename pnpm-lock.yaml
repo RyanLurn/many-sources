@@ -54,6 +54,9 @@ catalogs:
     lucide-react:
       specifier: ^0.555.0
       version: 0.555.0
+    neverthrow:
+      specifier: ^8.2.0
+      version: 8.2.0
     next:
       specifier: ^16.0.5
       version: 16.0.5
@@ -140,6 +143,9 @@ importers:
       lucide-react:
         specifier: 'catalog:'
         version: 0.555.0(react@19.2.0)
+      neverthrow:
+        specifier: 'catalog:'
+        version: 8.2.0
       next:
         specifier: 'catalog:'
         version: 16.0.5(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -1389,6 +1395,11 @@ packages:
   '@radix-ui/rect@1.1.1':
     resolution: {integrity: sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==}
 
+  '@rollup/rollup-linux-x64-gnu@4.53.3':
+    resolution: {integrity: sha512-3EhFi1FU6YL8HTUJZ51imGJWEX//ajQPfqWLI3BQq4TlvHy4X0MOr5q3D2Zof/ka0d5FNdPwZXm3Yyib/UEd+w==}
+    cpu: [x64]
+    os: [linux]
+
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
@@ -2621,6 +2632,10 @@ packages:
 
   natural-orderby@5.0.0:
     resolution: {integrity: sha512-kKHJhxwpR/Okycz4HhQKKlhWe4ASEfPgkSWNmKFHd7+ezuQlxkA5cM3+XkBPvm1gmHen3w53qsYAv+8GwRrBlg==}
+    engines: {node: '>=18'}
+
+  neverthrow@8.2.0:
+    resolution: {integrity: sha512-kOCT/1MCPAxY5iUV3wytNFUMUolzuwd/VF/1KCx7kf6CutrOsTie+84zTGTpgQycjvfLdBBdvBvFLqFD2c0wkQ==}
     engines: {node: '>=18'}
 
   next-themes@0.4.6:
@@ -4079,6 +4094,9 @@ snapshots:
 
   '@radix-ui/rect@1.1.1': {}
 
+  '@rollup/rollup-linux-x64-gnu@4.53.3':
+    optional: true
+
   '@standard-schema/spec@1.0.0': {}
 
   '@swc/helpers@0.5.15':
@@ -5334,6 +5352,10 @@ snapshots:
   natural-compare@1.4.0: {}
 
   natural-orderby@5.0.0: {}
+
+  neverthrow@8.2.0:
+    optionalDependencies:
+      '@rollup/rollup-linux-x64-gnu': 4.53.3
 
   next-themes@0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
