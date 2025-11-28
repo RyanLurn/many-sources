@@ -28,4 +28,15 @@ const signUpValidator = z.object({
   name: nameValidator,
 });
 
-export { passwordValidator, signUpValidator, emailValidator, nameValidator };
+const signInValidator = z.object({
+  password: passwordValidator,
+  email: emailValidator,
+});
+
+export {
+  passwordValidator,
+  signUpValidator,
+  signInValidator,
+  emailValidator,
+  nameValidator,
+};
