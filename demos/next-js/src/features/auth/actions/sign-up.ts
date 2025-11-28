@@ -1,9 +1,7 @@
 "use server";
 
-import type { Route } from "next";
-
 import { redirect } from "next/navigation";
-import z from "zod";
+import * as z from "zod";
 
 import { signUpValidator } from "@/features/auth/helpers/validators";
 import { auth } from "@/features/auth";
@@ -32,7 +30,6 @@ async function signUp(
     await auth.api.signUpEmail({
       body: {
         ...validatedFields,
-        callbackURL: "/protected" as Route,
       },
     });
   } catch (error) {
