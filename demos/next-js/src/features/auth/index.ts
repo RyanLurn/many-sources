@@ -11,7 +11,7 @@ import {
 import {
   MAXIMUM_PASSWORD_LENGTH,
   MINIMUM_PASSWORD_LENGTH,
-} from "@/features/auth/constants";
+} from "@/features/auth/helpers/constants";
 import { serverEnvironmentVariables } from "@/lib/env/server";
 import { database } from "@/database/connection";
 
