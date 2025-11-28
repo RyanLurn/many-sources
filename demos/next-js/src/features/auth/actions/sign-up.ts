@@ -2,10 +2,15 @@
 
 import type { Route } from "next";
 
+import z from "zod";
+
 import { signUpValidator } from "@/features/auth/helpers/validators";
 import { auth } from "@/features/auth";
 
-async function signUp(payload: FormData) {
+async function signUp(
+  _previousState: Record<string, unknown>,
+  payload: FormData
+) {
   const validationResult = signUpValidator.safeParse({
     password: payload.get("password"),
     email: payload.get("email"),
@@ -13,11 +18,10 @@ async function signUp(payload: FormData) {
   });
 
   if (!validationResult.success) {
-    const validationErrors = validationResult.error.issues.map(
-      (issue) => issue.message
-    );
+    const validationError = z.flattenError(validationResult.error);
     return {
-      errors: validationErrors,
+      fieldErrors: validationError.fieldErrors,
+      formErrors: validationError.formErrors,
     };
   }
 
@@ -30,10 +34,16 @@ async function signUp(payload: FormData) {
         callbackURL: "/protected" as Route,
       },
     });
+
+    return {
+      fieldErrors: {},
+      formErrors: [],
+    };
   } catch (error) {
     console.error("Sign up error:", error);
     return {
-      errors: ["Something went wrong"],
+      formErrors: ["Something went wrong"],
+      fieldErrors: {},
     };
   }
 }
