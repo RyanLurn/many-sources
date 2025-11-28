@@ -1,7 +1,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import * as z from "zod";
 
-const serverEnvironmentVariable = createEnv({
+const serverEnvironmentVariables = createEnv({
   server: {
     BETTER_AUTH_SECRET: z.string().min(1),
     SQLITE_FILE_PATH: z.string().min(1),
@@ -10,4 +10,4 @@ const serverEnvironmentVariable = createEnv({
   experimental__runtimeEnv: process.env,
 });
 
-export { serverEnvironmentVariable };
+export { serverEnvironmentVariables };
