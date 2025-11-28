@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import type { AuthLibraryError, UnexpectedError } from "@/types/errors";
 import type { NotAuthenticatedWarning } from "@/types/warnings";
 
+import { captureEvent } from "@/features/observability/capture-event";
 import { auth } from "@/features/auth";
 
 async function getUser(): Promise<
@@ -24,7 +25,7 @@ async function getUser(): Promise<
         where: "getUser function",
         level: "warn",
       };
-      console.warn(notAuthenticatedWarning);
+      captureEvent(notAuthenticatedWarning);
       return err(notAuthenticatedWarning);
     }
 
@@ -35,12 +36,12 @@ async function getUser(): Promise<
         context: {
           ...error,
         },
-        what: "Failed to get user",
         where: "getUser function",
         kind: "AUTH_LIBRARY",
+        what: error.message,
         level: "error",
       };
-      console.error(authLibraryError);
+      captureEvent(authLibraryError);
       return err(authLibraryError);
     }
 
@@ -48,12 +49,12 @@ async function getUser(): Promise<
       context: {
         rawError: error,
       },
-      what: "Failed to get user",
+      what: "Something went wrong",
       where: "getUser function",
       kind: "UNEXPECTED",
       level: "error",
     };
-    console.error(unexpectedError);
+    captureEvent(unexpectedError);
     return err(unexpectedError);
   }
 }

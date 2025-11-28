@@ -5,11 +5,11 @@ function captureEvent(event: BaseEvent) {
     event.when = new Date().toISOString();
   }
   if (!event.who) {
-    event.who = "Anonymous Request";
+    event.who = "Anonymous";
   }
 
   if (process.env.NODE_ENV === "development") {
-    const logMessage = `[${event.kind}]: ${event.who} causes "${event.what}" in ${event.where} at ${event.when}:`;
+    const logMessage = `${event.who} causes ${event.kind} ${event.level} event in ${event.where} at ${event.when}: ${event.what}. Context:`;
 
     switch (event.level) {
       case "error": {
