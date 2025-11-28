@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "eslint-config:type-check": "pnpm -F @many-sources/eslint-config run type-check",
+    "eslint-config:lint": "pnpm -F @many-sources/eslint-config run lint",
+    "eslint-config:lint-fix": "pnpm -F @many-sources/eslint-config run lint-fix"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "0.1.1",
