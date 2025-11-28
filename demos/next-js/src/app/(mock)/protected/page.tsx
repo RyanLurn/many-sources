@@ -7,7 +7,7 @@ export default async function ProtectedPage() {
 
   if (getUserResult.isErr()) {
     if (getUserResult.error.kind === "NOT_AUTHENTICATED") {
-      redirect("/");
+      redirect("/sign-in");
     } else {
       throw new Error("Something went wrong");
     }
