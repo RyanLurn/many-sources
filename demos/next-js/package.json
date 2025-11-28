@@ -15,6 +15,7 @@
     "@many-sources/styles": "workspace:*",
     "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-slot": "catalog:",
+    "@t3-oss/env-nextjs": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
@@ -22,7 +23,8 @@
     "next-themes": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "tailwind-merge": "catalog:"
+    "tailwind-merge": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@many-sources/eslint-config": "workspace:*",
