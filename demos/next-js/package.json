@@ -1,5 +1,24 @@
 {
   "name": "@many-sources/next-js",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@many-sources/styles": "workspace:*",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@many-sources/eslint-config": "workspace:*",
+    "@many-sources/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "babel-plugin-react-compiler": "catalog:",
+    "eslint": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  }
 }
