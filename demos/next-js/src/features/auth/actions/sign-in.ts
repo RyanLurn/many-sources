@@ -53,6 +53,11 @@ async function signIn(
         level: "error",
       };
       captureEvent(authLibraryError);
+
+      return {
+        formErrors: [authLibraryError.what],
+        fieldErrors: {},
+      };
     }
 
     const unexpectedError: UnexpectedError = {
@@ -67,7 +72,7 @@ async function signIn(
     captureEvent(unexpectedError);
 
     return {
-      formErrors: ["Something went wrong"],
+      formErrors: [unexpectedError.what],
       fieldErrors: {},
     };
   }
