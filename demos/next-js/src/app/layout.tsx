@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist_Mono, Geist } from "next/font/google";
 
 import "@/app/globals.css";
+import { ModeToggle } from "@/components/utilities/mode-toggle";
+import { Providers } from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <ModeToggle className="fixed top-3 right-3 z-50" />
+          <div className="h-dvh">{children}</div>
+        </Providers>
       </body>
     </html>
   );
