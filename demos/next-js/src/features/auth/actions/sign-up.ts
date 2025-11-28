@@ -2,6 +2,7 @@
 
 import type { Route } from "next";
 
+import { redirect } from "next/navigation";
 import z from "zod";
 
 import { signUpValidator } from "@/features/auth/helpers/validators";
@@ -34,11 +35,6 @@ async function signUp(
         callbackURL: "/protected" as Route,
       },
     });
-
-    return {
-      fieldErrors: {},
-      formErrors: [],
-    };
   } catch (error) {
     console.error("Sign up error:", error);
     return {
@@ -46,6 +42,8 @@ async function signUp(
       fieldErrors: {},
     };
   }
+
+  redirect("/protected");
 }
 
 export { signUp };
