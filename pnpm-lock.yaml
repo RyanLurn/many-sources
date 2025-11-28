@@ -24,14 +24,14 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       prettier:
-        specifier: 3.7.1
-        version: 3.7.1
+        specifier: 3.6.2
+        version: 3.6.2
       prettier-plugin-curly:
         specifier: 0.4.1
-        version: 0.4.1(prettier@3.7.1)
+        version: 0.4.1(prettier@3.6.2)
       prettier-plugin-tailwindcss:
         specifier: 0.7.1
-        version: 0.7.1(@prettier/plugin-oxc@0.1.1)(prettier@3.7.1)
+        version: 0.7.1(@prettier/plugin-oxc@0.1.1)(prettier@3.6.2)
 
   packages/styles:
     devDependencies:
@@ -276,8 +276,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.7.1:
-    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -436,17 +436,17 @@ snapshots:
       '@oxc-parser/binding-win32-arm64-msvc': 0.99.0
       '@oxc-parser/binding-win32-x64-msvc': 0.99.0
 
-  prettier-plugin-curly@0.4.1(prettier@3.7.1):
+  prettier-plugin-curly@0.4.1(prettier@3.6.2):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.6.2
 
-  prettier-plugin-tailwindcss@0.7.1(@prettier/plugin-oxc@0.1.1)(prettier@3.7.1):
+  prettier-plugin-tailwindcss@0.7.1(@prettier/plugin-oxc@0.1.1)(prettier@3.6.2):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.6.2
     optionalDependencies:
       '@prettier/plugin-oxc': 0.1.1
 
-  prettier@3.7.1: {}
+  prettier@3.6.2: {}
 
   tailwindcss@4.1.17: {}
 
