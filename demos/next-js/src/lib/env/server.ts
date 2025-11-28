@@ -3,7 +3,9 @@ import * as z from "zod";
 
 const serverEnvironmentVariable = createEnv({
   server: {
+    BETTER_AUTH_SECRET: z.string().min(1),
     SQLITE_FILE_PATH: z.string().min(1),
+    BETTER_AUTH_URL: z.url(),
   },
   experimental__runtimeEnv: process.env,
 });
