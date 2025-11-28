@@ -19,12 +19,10 @@ async function getUser(): Promise<
 
     if (!getSessionResult) {
       const notAuthenticatedWarning: NotAuthenticatedWarning = {
-        type: {
-          kind: "NOT_AUTHENTICATED",
-          level: "warn",
-        },
         what: "Request is not authenticated",
+        kind: "NOT_AUTHENTICATED",
         where: "getUser function",
+        level: "warn",
       };
       console.warn(notAuthenticatedWarning);
       return err(notAuthenticatedWarning);
@@ -34,30 +32,26 @@ async function getUser(): Promise<
   } catch (error) {
     if (error instanceof APIError) {
       const authLibraryError: AuthLibraryError = {
-        type: {
-          kind: "AUTH_LIBRARY",
-          level: "error",
-        },
         context: {
           ...error,
         },
         what: "Failed to get user",
         where: "getUser function",
+        kind: "AUTH_LIBRARY",
+        level: "error",
       };
       console.error(authLibraryError);
       return err(authLibraryError);
     }
 
     const unexpectedError: UnexpectedError = {
-      type: {
-        kind: "UNEXPECTED",
-        level: "error",
-      },
       context: {
         rawError: error,
       },
       what: "Failed to get user",
       where: "getUser function",
+      kind: "UNEXPECTED",
+      level: "error",
     };
     console.error(unexpectedError);
     return err(unexpectedError);

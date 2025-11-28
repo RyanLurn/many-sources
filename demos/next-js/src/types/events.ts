@@ -2,11 +2,9 @@ import type { WarningKinds } from "@/types/warnings";
 import type { ErrorKinds } from "@/types/errors";
 
 interface BaseEvent {
-  type: {
-    level: EventLevels;
-    kind: string;
-  };
   context?: Record<string, unknown>;
+  level: EventLevels;
+  kind?: string;
   where: string;
   when?: string;
   what: string;
@@ -14,17 +12,13 @@ interface BaseEvent {
 }
 
 interface WarningEvent extends BaseEvent {
-  type: {
-    kind: WarningKinds;
-    level: "warn";
-  };
+  kind: WarningKinds;
+  level: "warn";
 }
 
 interface ErrorEvent extends BaseEvent {
-  type: {
-    kind: ErrorKinds;
-    level: "error";
-  };
+  kind: ErrorKinds;
+  level: "error";
 }
 
 type EventLevels = "error" | "debug" | "warn" | "info";

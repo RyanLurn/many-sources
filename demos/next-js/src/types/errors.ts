@@ -1,17 +1,13 @@
 import type { ErrorEvent } from "@/types/events";
 
 interface AuthLibraryError extends ErrorEvent {
-  type: {
-    kind: "AUTH_LIBRARY";
-    level: "error";
-  };
+  kind: "AUTH_LIBRARY";
+  level: "error";
 }
 
 interface UnexpectedError extends ErrorEvent {
-  type: {
-    kind: "UNEXPECTED";
-    level: "error";
-  };
+  kind: "UNEXPECTED";
+  level: "error";
 }
 
 type ErrorKinds = "AUTH_LIBRARY" | "UNEXPECTED";
