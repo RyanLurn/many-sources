@@ -28,6 +28,9 @@ const auth = betterAuth({
   },
   secret: serverEnvironmentVariables.BETTER_AUTH_SECRET,
   baseURL: serverEnvironmentVariables.BETTER_AUTH_URL,
+  emailAndPassword: {
+    enabled: true,
+  },
   plugins: [nextCookies()],
 });
 
