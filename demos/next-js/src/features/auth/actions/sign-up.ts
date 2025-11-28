@@ -1,8 +1,12 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { APIError } from "better-auth";
 import * as z from "zod";
 
+import type { AuthLibraryError, UnexpectedError } from "@/types/errors";
+
+import { captureEvent } from "@/features/observability/capture-event";
 import { signUpValidator } from "@/features/auth/helpers/validators";
 import { auth } from "@/features/auth";
 
@@ -33,7 +37,30 @@ async function signUp(
       },
     });
   } catch (error) {
-    console.error("Sign up error:", error);
+    if (error instanceof APIError) {
+      const authLibraryError: AuthLibraryError = {
+        context: {
+          ...error,
+        },
+        where: "signUp server action",
+        kind: "AUTH_LIBRARY",
+        what: error.message,
+        level: "error",
+      };
+      captureEvent(authLibraryError);
+    }
+
+    const unexpectedError: UnexpectedError = {
+      where: "signUp server action, after calling auth.api.signUpEmail",
+      context: {
+        rawError: error,
+      },
+      what: "Something went wrong",
+      kind: "UNEXPECTED",
+      level: "error",
+    };
+    captureEvent(unexpectedError);
+
     return {
       formErrors: ["Something went wrong"],
       fieldErrors: {},
