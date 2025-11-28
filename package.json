@@ -4,6 +4,13 @@
   "scripts": {
     "format": "prettier . --write",
     "format:check": "prettier . --check",
+    "next-demo:dev": "pnpm -F @many-sources/next-js-demo run dev",
+    "next-demo:build": "pnpm -F @many-sources/next-js-demo run build",
+    "next-demo:start": "pnpm -F @many-sources/next-js-demo run start",
+    "next-demo:type-gen": "pnpm -F @many-sources/next-js-demo run type-gen",
+    "next-demo:type-check": "pnpm -F @many-sources/next-js-demo run type-check",
+    "next-demo:lint": "pnpm -F @many-sources/next-js-demo run lint",
+    "next-demo:lint-fix": "pnpm -F @many-sources/next-js-demo run lint-fix",
     "eslint-config:type-check": "pnpm -F @many-sources/eslint-config run type-check",
     "eslint-config:lint": "pnpm -F @many-sources/eslint-config run lint",
     "eslint-config:lint-fix": "pnpm -F @many-sources/eslint-config run lint-fix"

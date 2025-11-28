@@ -2,6 +2,15 @@
   "name": "@many-sources/next-js-demo",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-gen": "next typegen",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint --cache",
+    "lint-fix": "eslint --cache --fix"
+  },
   "dependencies": {
     "@many-sources/styles": "workspace:*",
     "next": "catalog:",
