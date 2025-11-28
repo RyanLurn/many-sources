@@ -3,6 +3,11 @@
 import { useActionState } from "react";
 
 import {
+  PASSWORD_FORM_FIELD,
+  EMAIL_FORM_FIELD,
+  NAME_FORM_FIELD,
+} from "@/features/auth/helpers/constants";
+import {
   CardDescription,
   CardContent,
   CardHeader,
@@ -56,14 +61,14 @@ function SignUpForm() {
           <FieldSet>
             <FieldGroup>
               <Field data-invalid={isNameInvalid}>
-                <FieldLabel htmlFor="name">Full Name</FieldLabel>
+                <FieldLabel htmlFor={NAME_FORM_FIELD}>Full Name</FieldLabel>
                 <Input
                   placeholder="Anders Hejlsberg"
                   aria-invalid={isNameInvalid}
+                  name={NAME_FORM_FIELD}
                   disabled={isPending}
-                  name="name"
+                  id={NAME_FORM_FIELD}
                   type="text"
-                  id="name"
                   required
                 />
                 {isNameInvalid && (
@@ -73,14 +78,14 @@ function SignUpForm() {
                 )}
               </Field>
               <Field data-invalid={isEmailInvalid}>
-                <FieldLabel htmlFor="email">Email</FieldLabel>
+                <FieldLabel htmlFor={EMAIL_FORM_FIELD}>Email</FieldLabel>
                 <Input
                   placeholder="example@gmail.com"
                   aria-invalid={isEmailInvalid}
+                  name={EMAIL_FORM_FIELD}
+                  id={EMAIL_FORM_FIELD}
                   disabled={isPending}
-                  name="email"
                   type="email"
-                  id="email"
                   required
                 />
                 {isEmailInvalid && (
@@ -90,13 +95,13 @@ function SignUpForm() {
                 )}
               </Field>
               <Field data-invalid={isPasswordInvalid}>
-                <FieldLabel htmlFor="password">Password</FieldLabel>
+                <FieldLabel htmlFor={PASSWORD_FORM_FIELD}>Password</FieldLabel>
                 <Input
                   aria-invalid={isPasswordInvalid}
+                  name={PASSWORD_FORM_FIELD}
+                  id={PASSWORD_FORM_FIELD}
                   disabled={isPending}
-                  name="password"
                   type="password"
-                  id="password"
                   required
                 />
                 {isPasswordInvalid && (

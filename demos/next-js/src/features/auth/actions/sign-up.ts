@@ -6,6 +6,11 @@ import * as z from "zod";
 
 import type { AuthLibraryError, UnexpectedError } from "@/types/errors";
 
+import {
+  PASSWORD_FORM_FIELD,
+  EMAIL_FORM_FIELD,
+  NAME_FORM_FIELD,
+} from "@/features/auth/helpers/constants";
 import { captureEvent } from "@/features/observability/capture-event";
 import { signUpValidator } from "@/features/auth/helpers/validators";
 import { auth } from "@/features/auth";
@@ -15,9 +20,9 @@ async function signUp(
   payload: FormData
 ) {
   const validationResult = signUpValidator.safeParse({
-    password: payload.get("password"),
-    email: payload.get("email"),
-    name: payload.get("name"),
+    password: payload.get(PASSWORD_FORM_FIELD),
+    email: payload.get(EMAIL_FORM_FIELD),
+    name: payload.get(NAME_FORM_FIELD),
   });
 
   if (!validationResult.success) {
