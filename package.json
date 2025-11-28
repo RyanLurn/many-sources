@@ -1,6 +1,16 @@
 {
   "name": "many-sources",
   "version": "1.0.0",
+  "scripts": {
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@prettier/plugin-oxc": "0.1.1",
+    "prettier": "3.7.1",
+    "prettier-plugin-curly": "0.4.1",
+    "prettier-plugin-tailwindcss": "0.7.1"
+  },
   "license": "MIT",
   "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
