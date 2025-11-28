@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "type-gen": "next typegen",
     "type-check": "tsc --noEmit",
     "lint": "eslint --cache",
-    "lint-fix": "eslint --cache --fix"
+    "lint-fix": "eslint --cache --fix",
+    "db-generate": "drizzle-kit generate",
+    "db-migrate": "drizzle-kit migrate",
+    "db-studio": "drizzle-kit studio --port=4001",
+    "db-check": "drizzle-kit check"
   },
   "dependencies": {
+    "@libsql/client": "catalog:",
     "@many-sources/styles": "workspace:*",
     "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-slot": "catalog:",
@@ -36,6 +41,7 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
+    "drizzle-kit": "catalog:",
     "eslint": "catalog:",
     "postcss": "catalog:",
     "tailwindcss": "catalog:",

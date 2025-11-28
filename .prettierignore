@@ -1,6 +1,9 @@
 # Ignore pnpm lock file
 pnpm-lock.yaml
 
+# Generated files
+**/database/migrations
+
 # Notes:
 # By default, Prettier will ignore:
 # - Files in version control systems directories (".git", ".jj", ".sl", ".svn" and ".hg")
