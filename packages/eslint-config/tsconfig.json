@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@many-sources/typescript-config/base.json",
+  "compilerOptions": {
+    "checkJs": true,
+    "module": "preserve",
+    "noEmit": true
+  },
+  "include": ["src/**/*"]
+}
