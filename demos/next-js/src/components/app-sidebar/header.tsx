@@ -1,3 +1,5 @@
+"use client";
+
 import { PanelLeftClose, Bot } from "lucide-react";
 
 import { SidebarHeader, useSidebar } from "@/components/ui/sidebar";

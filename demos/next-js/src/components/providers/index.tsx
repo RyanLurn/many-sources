@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/providers/theme";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +9,7 @@ function Providers({ children }: { children: React.ReactNode }) {
       attribute="class"
       enableSystem
     >
-      {children}
+      <SidebarProvider>{children}</SidebarProvider>
     </ThemeProvider>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { PanelLeftOpen } from "lucide-react";
 
 import { useSidebar } from "@/components/ui/sidebar";
@@ -11,7 +13,7 @@ function AppSidebarTrigger() {
   }
 
   return (
-    <div className="fixed top-2 left-2">
+    <div className="fixed top-3 left-3 z-50">
       <Button onClick={toggleSidebar} variant="outline" size="icon">
         <PanelLeftOpen className="size-5" />
       </Button>
