@@ -6,7 +6,8 @@ import { StickToBottom } from "use-stick-to-bottom";
 import { MessageBubble } from "@/features/ai-chat/components/message/bubble";
 import { cn } from "@/lib/utilities";
 
-interface MessageThreadProperties extends ComponentProps<typeof StickToBottom> {
+interface MessageThreadProperties
+  extends Omit<ComponentProps<typeof StickToBottom>, "children"> {
   messages: UIMessage[];
 }
 
