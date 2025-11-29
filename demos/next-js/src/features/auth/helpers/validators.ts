@@ -9,7 +9,7 @@ const nameValidator = z
   .string()
   .min(3, "Name must be at least 3 characters long");
 
-const emailValidator = z.email("Invalid email");
+const emailValidator = z.email("Invalid email").toLowerCase().trim();
 
 const passwordValidator = z
   .string()
