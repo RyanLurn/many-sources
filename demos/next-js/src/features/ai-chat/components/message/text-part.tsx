@@ -1,24 +1,15 @@
 import type { TextUIPart } from "ai";
 
-import Markdown, { type Options } from "react-markdown";
-import remarkGfm from "remark-gfm";
+import type { MarkdownContentProperties } from "@/features/ai-chat/components/message/markdown-content";
 
-import { markdownComponents } from "@/components/markdown";
+import { MarkdownContent } from "@/features/ai-chat/components/message/markdown-content";
 
 interface TextPartProperties
-  extends Omit<Options, "remarkPlugins" | "components">,
+  extends Omit<MarkdownContentProperties, "content">,
     TextUIPart {}
 
 function TextPart({ text, ...properties }: TextPartProperties) {
-  return (
-    <Markdown
-      components={markdownComponents}
-      remarkPlugins={[remarkGfm]}
-      {...properties}
-    >
-      {text}
-    </Markdown>
-  );
+  return <MarkdownContent content={text} {...properties} />;
 }
 
 export { TextPart };
