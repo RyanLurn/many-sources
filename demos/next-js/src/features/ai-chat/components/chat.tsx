@@ -30,7 +30,7 @@ function Chat({
       className={cn("flex h-full w-full flex-col gap-y-3", className)}
       {...properties}
     >
-      <MessageThread messages={messages} />
+      <MessageThread messages={messages} className="flex-1" />
     </div>
   );
 }
