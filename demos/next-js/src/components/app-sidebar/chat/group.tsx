@@ -16,7 +16,7 @@ function ChatGroup() {
       <SidebarGroupContent>
         <SidebarMenu>
           {chats.map((chat) => (
-            <ChatItem {...chat} />
+            <ChatItem title={chat.title} key={chat.id} id={chat.id} />
           ))}
         </SidebarMenu>
       </SidebarGroupContent>
