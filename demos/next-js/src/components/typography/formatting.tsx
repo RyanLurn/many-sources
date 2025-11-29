@@ -14,18 +14,6 @@ function TypographyStrong({
   );
 }
 
-function TypographyA({
-  className,
-  children,
-  ...properties
-}: ComponentProps<"a">) {
-  return (
-    <a className={cn("cursor-pointer underline", className)} {...properties}>
-      {children}
-    </a>
-  );
-}
-
 function TypographyDel({
   className,
   children,
@@ -50,4 +38,4 @@ function TypographyEm({
   );
 }
 
-export { TypographyStrong, TypographyDel, TypographyEm, TypographyA };
+export { TypographyStrong, TypographyDel, TypographyEm };
