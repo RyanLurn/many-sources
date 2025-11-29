@@ -1,8 +1,8 @@
 import type { TextUIPart } from "ai";
 
-import type { MarkdownContentProperties } from "@/features/ai-chat/components/message/markdown-content";
+import type { MarkdownContentProperties } from "@/features/ai-chat/components/message/parts/markdown-content";
 
-import { MarkdownContent } from "@/features/ai-chat/components/message/markdown-content";
+import { MarkdownContent } from "@/features/ai-chat/components/message/parts/markdown-content";
 
 interface TextPartProperties
   extends Omit<MarkdownContentProperties, "content">,

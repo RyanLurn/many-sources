@@ -10,7 +10,7 @@ import {
   CollapsibleTrigger,
   Collapsible,
 } from "@/components/ui/collapsible";
-import { MarkdownContent } from "@/features/ai-chat/components/message/markdown-content";
+import { MarkdownContent } from "@/features/ai-chat/components/message/parts/markdown-content";
 import { Button } from "@/components/ui/button";
 
 function ReasoningPartTrigger({ state }: Pick<ReasoningUIPart, "state">) {

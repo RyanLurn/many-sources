@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
 import type { UIMessage } from "ai";
 
-import { ReasoningPart } from "@/features/ai-chat/components/message/reasoning-part";
+import { ReasoningPart } from "@/features/ai-chat/components/message/parts/reasoning-part";
+import { TextPart } from "@/features/ai-chat/components/message/parts/text-part";
 import { MessageAvatar } from "@/features/ai-chat/components/message/avatar";
-import { TextPart } from "@/features/ai-chat/components/message/text-part";
 import { cn } from "@/lib/utilities";
 
 interface MessageBubbleProperties extends ComponentProps<"div"> {
