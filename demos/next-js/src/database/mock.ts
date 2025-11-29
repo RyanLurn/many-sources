@@ -119,3 +119,4 @@ const mockDatabase = {
 };
 
 export { mockDatabase };
+export type { Message, Chat };
