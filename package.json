@@ -20,7 +20,6 @@
     "eslint-config:lint-fix": "pnpm -F @many-sources/eslint-config run lint-fix"
   },
   "devDependencies": {
-    "@prettier/plugin-oxc": "0.1.1",
     "lefthook": "^2.0.4",
     "prettier": "3.6.2",
     "prettier-plugin-curly": "0.4.1",
