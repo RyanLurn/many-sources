@@ -16,6 +16,8 @@
     "db-check": "drizzle-kit check"
   },
   "dependencies": {
+    "@ai-sdk/groq": "catalog:",
+    "@ai-sdk/react": "catalog:",
     "@libsql/client": "catalog:",
     "@many-sources/styles": "workspace:*",
     "@radix-ui/react-dropdown-menu": "catalog:",
@@ -23,6 +25,7 @@
     "@radix-ui/react-separator": "catalog:",
     "@radix-ui/react-slot": "catalog:",
     "@t3-oss/env-nextjs": "catalog:",
+    "ai": "catalog:",
     "better-auth": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
