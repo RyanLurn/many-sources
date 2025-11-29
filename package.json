@@ -11,6 +11,10 @@
     "next-demo:type-check": "pnpm -F @many-sources/next-js-demo run type-check",
     "next-demo:lint": "pnpm -F @many-sources/next-js-demo run lint",
     "next-demo:lint-fix": "pnpm -F @many-sources/next-js-demo run lint-fix",
+    "next-demo:db-generate": "pnpm -F @many-sources/next-js-demo run db-generate",
+    "next-demo:db-migrate": "pnpm -F @many-sources/next-js-demo run db-migrate",
+    "next-demo:db-studio": "pnpm -F @many-sources/next-js-demo run db-studio",
+    "next-demo:db-check": "pnpm -F @many-sources/next-js-demo run db-check",
     "eslint-config:type-check": "pnpm -F @many-sources/eslint-config run type-check",
     "eslint-config:lint": "pnpm -F @many-sources/eslint-config run lint",
     "eslint-config:lint-fix": "pnpm -F @many-sources/eslint-config run lint-fix"

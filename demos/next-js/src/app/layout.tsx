@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "An AI chat app to demonstrate @many-sources libraries",
-  description: "Next.js demo",
+  description: "An AI chat app to demonstrate @many-sources libraries",
+  title: "Next.js Demo App - Many Sources",
 };
 
 export default function RootLayout({
