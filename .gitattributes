@@ -1,2 +1,6 @@
 # Enforce LF line endings for all text files to ensure consistency
 * text=auto eol=lf
+
+# Force GitHub to treat the demos folder as source code
+demos/** linguist-vendored=false
+demos/** linguist-documentation=false
