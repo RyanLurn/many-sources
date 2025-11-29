@@ -1,6 +1,9 @@
+"use client";
+
 import type { ReasoningUIPart } from "ai";
 
 import { ChevronsUpDown } from "lucide-react";
+import { useState } from "react";
 
 import {
   CollapsibleContent,
@@ -24,8 +27,10 @@ function ReasoningPartTrigger({ state }: Pick<ReasoningUIPart, "state">) {
 }
 
 function ReasoningPart({ state, text }: ReasoningUIPart) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Collapsible>
+    <Collapsible onOpenChange={setIsOpen} open={isOpen}>
       <ReasoningPartTrigger state={state} />
       <CollapsibleContent className="text-muted-foreground">
         <MarkdownContent content={text} />
