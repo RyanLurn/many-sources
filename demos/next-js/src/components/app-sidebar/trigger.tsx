@@ -19,4 +19,4 @@ function AppSidebarTrigger() {
   );
 }
 
-export default AppSidebarTrigger;
+export { AppSidebarTrigger };
