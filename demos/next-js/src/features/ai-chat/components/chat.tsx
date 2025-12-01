@@ -1,8 +1,9 @@
 "use client";
 
 import type { FormEvent } from "react";
-import type { UIMessage } from "ai";
+import type { Route } from "next";
 
+import { DefaultChatTransport, type UIMessage } from "ai";
 import { type ComponentProps, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 
@@ -23,6 +24,15 @@ function Chat({
 }: ChatProperties) {
   const [prompt, setPrompt] = useState("");
   const { sendMessage, messages, status } = useChat({
+    transport: new DefaultChatTransport({
+      // only send the last message (the user's prompt) to the server:
+      prepareSendMessagesRequest({ messages, id }) {
+        return {
+          body: { newMessage: messages.at(-1), chatId: id },
+        };
+      },
+      api: "/api/chat" as Route,
+    }),
     messages: initialMessages,
     generateId: generateUuid,
     id: chatId,
