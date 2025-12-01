@@ -41,6 +41,7 @@ function SendPromptButton({
     <Button
       className={cn("gap-1.5 rounded-lg", className)}
       disabled={disabled}
+      type="submit"
       {...properties}
     >
       {Icon}
