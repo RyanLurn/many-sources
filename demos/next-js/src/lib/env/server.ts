@@ -5,6 +5,7 @@ const serverEnvironmentVariables = createEnv({
   server: {
     BETTER_AUTH_SECRET: z.string().min(1),
     SQLITE_FILE_PATH: z.string().min(1),
+    GROQ_API_KEY: z.string().min(1),
     BETTER_AUTH_URL: z.url(),
   },
   experimental__runtimeEnv: process.env,
